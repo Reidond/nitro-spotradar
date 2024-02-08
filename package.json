@@ -1,15 +1,16 @@
 {
-	"private": true,
-	"scripts": {
-		"prepare": "nitropack prepare",
-		"dev": "nitropack dev",
-		"build": "nitropack build",
-		"preview": "bun run .output/server/index.mjs"
-	},
-	"dependencies": {
-		"nitropack": "npm:nitropack-nightly@latest"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.5.3"
-	}
+  "private": true,
+  "scripts": {
+    "prepare": "nitropack prepare",
+    "dev": "nitropack dev",
+    "build": "nitropack build",
+    "preview": "bun run .output/server/index.mjs"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "nitropack": "npm:nitropack-nightly@latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3"
+  }
 }
