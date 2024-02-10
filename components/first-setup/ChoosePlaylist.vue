@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Button } from '~/components/ui/button';
 
-const data = useGetSpotifyPlaylists();
+const { data } = useGetSpotifyPlaylists();
 const spotifyPlaylist = useCookie('spotify:current_playlist');
 const items = computed(() => {
 	return data.value?.items || [];

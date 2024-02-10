@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		['shadcn-nuxt', { prefix: '', componentDir: './components/ui' }],
 		'@vueuse/nuxt',
-		['@nuxt/image', {}],
+		'@nuxt/image',
 	],
 	runtimeConfig: {
 		spotify: {
@@ -16,4 +16,5 @@ export default defineNuxtConfig({
 			clientSecret: process.env.SPOTIFY_OAUTH_CLIENT_SECRET,
 		},
 	},
+	image: {},
 });

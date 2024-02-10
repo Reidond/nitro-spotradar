@@ -3,7 +3,9 @@ import type { Playlist } from './../types/spotify/playlist.d';
 import { fetchWithRefresh } from './use-oauth';
 
 export function useGetSpotifyPlaylists() {
-	const { data } = useAsyncData(async () => {
+	const key = 'spotify:current-user-playlists';
+
+	const { refresh } = useAsyncData(key, async () => {
 		const event = useRequestEvent();
 
 		const url = new URL('https://api.spotify.com/v1/me/playlists');
@@ -14,5 +16,7 @@ export function useGetSpotifyPlaylists() {
 		return data;
 	});
 
-	return data;
+	const { data } = useNuxtData<Paging<Playlist>>(key);
+
+	return { data, refresh };
 }
