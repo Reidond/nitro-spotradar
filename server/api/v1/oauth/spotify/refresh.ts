@@ -30,10 +30,14 @@ export default defineEventHandler(async (event) => {
 
 		deleteOAuthCookie(event, 'spotify');
 		setOAuthCookie(event, 'spotify', data);
-		await sendRedirect(event, '/', 302);
+
+		return data;
 	} catch (e) {
 		if (e instanceof FetchError) {
-			if (Object.hasOwn(e.data, 'error') && e.data.error === 'invalid_grant') {
+			if (
+				Object.hasOwn(e.data, 'error') &&
+				(e.data.error === 'invalid_grant' || e.data.error === 'invalid_client')
+			) {
 				throw createError({
 					statusCode: 401,
 					statusMessage: e.data.error_description,

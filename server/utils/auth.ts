@@ -11,7 +11,7 @@ export interface SpotifyOAuthToken {
 
 type Token = {
 	access_token: string;
-	refresh_token: string;
+	refresh_token?: string;
 	expires_in: number;
 };
 export function setOAuthCookie<T extends Token>(event: H3Event, namespace: string, data: T) {
@@ -22,12 +22,14 @@ export function setOAuthCookie<T extends Token>(event: H3Event, namespace: strin
 		sameSite: 'strict',
 		secure: true,
 	});
-	setCookie(event, `${namespace}:refresh_token`, data.refresh_token, {
-		httpOnly: true,
-		path: '/',
-		sameSite: 'strict',
-		secure: true,
-	});
+	if (data.refresh_token) {
+		setCookie(event, `${namespace}:refresh_token`, data.refresh_token, {
+			httpOnly: true,
+			path: '/',
+			sameSite: 'strict',
+			secure: true,
+		});
+	}
 }
 
 export function deleteOAuthCookie(event: H3Event, namespace: string) {
