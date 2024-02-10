@@ -1,0 +1,37 @@
+@font-face {
+	font-family: 'BM';
+	src:
+		url('./BerkeleyMono-Regular.woff2') format('woff2-variations'),
+		url('./BerkeleyMono-Regular.woff') format('woff-variations');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BM';
+	src:
+		url('./BerkeleyMono-Italic.woff2') format('woff2-variations'),
+		url('./BerkeleyMono-Italic.woff') format('woff-variations');
+	font-weight: 400;
+	font-display: swap;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'BM';
+	src:
+		url('./BerkeleyMono-Bold.woff2') format('woff2-variations'),
+		url('./BerkeleyMono-Bold.woff') format('woff-variations');
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'BM';
+	src:
+		url('./BerkeleyMono-BoldItalic.woff2') format('woff2-variations'),
+		url('./BerkeleyMono-BoldItalic.woff') format('woff-variations');
+	font-weight: 700;
+	font-display: swap;
+	font-style: italic;
+}
