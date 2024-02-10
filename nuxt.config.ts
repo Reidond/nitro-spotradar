@@ -12,9 +12,8 @@ export default defineNuxtConfig({
 	],
 	runtimeConfig: {
 		spotify: {
-			//! TODO: remove sensitive data
-			clientId: 'f453ecc180a349bb9a0ef39d4f925ca9',
-			clientSecret: 'd0d80519e8f7497390ca25007b4abe7a',
+			clientId: process.env.SPOTIFY_OAUTH_CLIENT_ID,
+			clientSecret: process.env.SPOTIFY_OAUTH_CLIENT_SECRET,
 		},
 	},
 });
